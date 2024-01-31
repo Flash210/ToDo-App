@@ -13,4 +13,15 @@ abstract class WebsService{
 @GET("todos")
 Future<List<TodoModel>> getAllTodos();
 
+
+ @POST("add")
+  Future<TodoModel> addTodo(@Body() TodoModel todo);
+
+  @PUT("put/todos/{id}")
+  Future<TodoModel> updateTodo(
+      @Path("id") int id, @Body() TodoModel updatedTodo);
+
+  @DELETE("delete/todos/{id}")
+  Future<void> deleteTodo(@Path("id") int id);
+
 }

@@ -10,3 +10,21 @@ class GetAllTodos extends MyState {
 
   GetAllTodos(this.allTodosList);
 }
+
+class AddTodoSuccess extends MyState {
+  final TodoModel addedTodo;
+
+  AddTodoSuccess(this.addedTodo);
+}
+
+class UpdateTodoSuccess extends MyState {
+  final TodoModel updatedTodo;
+
+  UpdateTodoSuccess(this.updatedTodo);
+}
+
+class DeleteTodoSuccess extends MyState {
+  final int deletedTodoId;
+
+  DeleteTodoSuccess(this.deletedTodoId);
+}

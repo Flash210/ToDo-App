@@ -17,4 +17,16 @@ Future<List<TodoModel>> getAllTodos()async{
 }
 
 
+
+  Future<TodoModel> addTodo(TodoModel todo) async {
+    return await websService.addTodo(todo);
+  }
+
+  Future<TodoModel> updateTodo(int id, TodoModel updatedTodo) async {
+    return await websService.updateTodo(id, updatedTodo);
+  }
+
+  Future<void> deleteTodo(int id) async {
+    await websService.deleteTodo(id);
+  }
 }

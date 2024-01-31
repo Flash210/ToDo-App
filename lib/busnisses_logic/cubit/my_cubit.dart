@@ -14,4 +14,23 @@ class MyCubit extends Cubit<MyState> {
       emit(GetAllTodos(todoList));
     });
   }
+
+void addTodo(TodoModel todo) {
+    repository.addTodo(todo).then((addedTodo) {
+      emit(AddTodoSuccess(addedTodo));
+    });
+  }
+
+    void updateTodo(int id, TodoModel updatedTodo) {
+    repository.updateTodo(id, updatedTodo).then((updatedTodo) {
+      emit(UpdateTodoSuccess(updatedTodo));
+    });
+  }
+
+  void deleteTodo(int id) {
+    repository.deleteTodo(id).then((_) {
+      emit(DeleteTodoSuccess(id));
+    });
+  }
+
 }
